@@ -1,0 +1,65 @@
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .idea/libraries/gson_2_3_1.xml
+	deleted:    src/by/bsu/chat/action/MessageAction.java
+	new file:   src/by/bsu/chat/logic/MessageAction.java
+	new file:   src/by/bsu/chat/main/IllegalCaseException.java
+	new file:   src/by/bsu/nummeth/main/SimpleIteration.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   src/by/bsu/chat/creator/Creator.java
+	modified:   src/by/bsu/chat/entity/Message.java
+	modified:   src/by/bsu/chat/logic/MessageAction.java
+	modified:   src/by/bsu/chat/main/Main.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.idea/.name
+	.idea/compiler.xml
+	.idea/copyright/
+	.idea/encodings.xml
+	.idea/libraries/log4j_1_2_17.xml
+	.idea/misc.xml
+	.idea/modules.xml
+	.idea/uiDesigner.xml
+	.idea/vcs.xml
+	.idea/workspace.xml
+	input.txt
+	lib/
+	log4j.xml
+	logs/
+	out/
+	output.json
+	output.txt
+	someJava.iml
+	status.txt
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   src/by/bsu/chat/creator/Creator.java
+	modified:   src/by/bsu/chat/entity/Message.java
+	modified:   src/by/bsu/chat/logic/MessageAction.java
+	modified:   src/by/bsu/chat/main/Main.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore~
+	input.txt
+	lib/
+	log4j.xml
+	logs/
+	output.json
+	output.txt
+	status.txt
+	status.txt~
+
+no changes added to commit (use "git add" and/or "git commit -a")
