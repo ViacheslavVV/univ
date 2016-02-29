@@ -1,15 +1,19 @@
 package by.bsu.chat.main;
 
-import by.bsu.chat.creator.Creator;
+import by.bsu.chat.logic.MessageAction;
 import by.bsu.chat.entity.Message;
-import by.bsu.chat.report.Report;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 /**
- * Created by jenia on 16.2.16.
+ * main class
+ *
  */
 public class Main {
     private static final Logger LOG = Logger.getLogger(Main.class);
@@ -18,14 +22,19 @@ public class Main {
     }
     public static void main(String[] args){
         try {
-            Creator creator = new Creator();
-            Message message = creator.createMessage("input.txt");
-            Report report = new Report();
-            report.messageToFile("output.txt", message);
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found");
+            MessageAction messageAction = new MessageAction();
+            messageAction.process();
+
+        } catch (IllegalCaseException e) {
             e.printStackTrace();
+            System.err.println("Illegal case");
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            System.err.println("No such element");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Io exception");
         }
-        LOG.info("info");
+        //LOG.info("info");
     }
 }
