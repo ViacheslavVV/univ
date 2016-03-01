@@ -1,16 +1,21 @@
 package by.bsu.chat.report;
 
 import by.bsu.chat.entity.Message;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.List;
 
 /**
- * Created by jenia on 16.02.16.
+ * report to json
  */
 public class Report {
-    public void messageToFile(String filename, Message message) throws FileNotFoundException{
-        PrintStream printStream = new PrintStream(filename);
-        printStream.print(message);
-        printStream.close();
+    public void saveHistory(String filename, List<Message> messages) throws IOException {
+        Writer writer = new FileWriter(filename, false);
+        Gson gson = new GsonBuilder().create();
+        gson.toJson(messages, writer);
+        writer.close();
     }
 }

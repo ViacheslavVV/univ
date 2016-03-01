@@ -1,14 +1,13 @@
 package by.bsu.chat.main;
 
-import by.bsu.chat.logic.MessageAction;
+import by.bsu.chat.creator.Creator;
+import by.bsu.chat.entity.ChatMenu;
+import by.bsu.chat.entity.Login;
 import by.bsu.chat.entity.Message;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import by.bsu.chat.logic.CaseProcessor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-
-import java.io.*;
-import java.util.NoSuchElementException;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -22,15 +21,17 @@ public class Main {
     }
     public static void main(String[] args){
         try {
-            MessageAction messageAction = new MessageAction();
-            messageAction.process();
+            Creator creator = new Creator();
+
+            Login login = creator.createLogin("login.txt");
+            ChatMenu menu = creator.createChatMenu("chatmenu.txt");
+
+            CaseProcessor caseProcessor = new CaseProcessor();
+            caseProcessor.process(menu, login);
 
         } catch (IllegalCaseException e) {
             e.printStackTrace();
             System.err.println("Illegal case");
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            System.err.println("No such element");
         } catch (IOException e) {
             e.printStackTrace();
             System.err.println("Io exception");
