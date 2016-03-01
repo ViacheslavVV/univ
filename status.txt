@@ -118,4 +118,23 @@ Untracked files:
 	input.txt
 	output.json
 	status.txt~
+On branch master
+Your branch is up-to-date with 'origin/master'.
 
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jenia@mera:~/projects/jProj/someJava$ git add .gitignore
+jenia@mera:~/projects/jProj/someJava$ git commit -m "ignore files"
+[master a6cc106] ignore files
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+jenia@mera:~/projects/jProj/someJava$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
