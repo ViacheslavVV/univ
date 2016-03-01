@@ -84,4 +84,38 @@ Untracked files:
 	status.txt~
 
 no changes added to commit (use "git add" and/or "git commit -a")
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   chatmenu.txt
+	new file:   login.txt
+	new file:   src/by/bsu/chat/entity/ChatMenu.java
+	new file:   src/by/bsu/chat/entity/Login.java
+	renamed:    src/by/bsu/chat/logic/MessageAction.java -> src/by/bsu/chat/logic/CaseProcessor.java
+	modified:   src/by/bsu/chat/logic/MessageAction.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+	modified:   login.txt
+	modified:   src/by/bsu/chat/creator/Creator.java
+	modified:   src/by/bsu/chat/entity/ChatMenu.java
+	modified:   src/by/bsu/chat/entity/Login.java
+	modified:   src/by/bsu/chat/logic/CaseProcessor.java
+	modified:   src/by/bsu/chat/logic/MessageAction.java
+	modified:   src/by/bsu/chat/main/Main.java
+	modified:   src/by/bsu/chat/report/Report.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore~
+	input.txt
+	output.json
+	status.txt~
 
