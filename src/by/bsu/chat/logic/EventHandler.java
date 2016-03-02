@@ -11,12 +11,11 @@ import java.util.*;
 /**
  * this class defines actions with message
  */
-public class CaseProcessor {
+public class EventHandler {
 
     public void process(ChatMenu menu, Login login) throws IllegalCaseException, IOException {
         try (Scanner scanner = new Scanner(System.in)) {
             int i;
-
             List<Message> mesList = new ArrayList<>();
             Message message;
             do {
@@ -42,7 +41,7 @@ public class CaseProcessor {
                         break;
                     case 5:
                         Report report = new Report();
-                        report.saveHistory("output.json", mesList);
+                        report.messagesToJson("output.json", mesList);
                         break;
                     default:
                         throw new IllegalCaseException("illegal case");
