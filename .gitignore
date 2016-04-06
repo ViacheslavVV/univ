@@ -4,4 +4,4 @@ out
 status.txt~
 .gitignore~
 output.json
-src/by/bsu/nummeth/main
+src/by/bsu/nummeth/main/SimpleIteration.java
