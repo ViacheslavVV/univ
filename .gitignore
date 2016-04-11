@@ -6,4 +6,5 @@ status.txt~
 output.json
 src/by/bsu/nummeth/main/SimpleIteration.java
 src/by/bsu/nummeth
-logs
+logs/
+
