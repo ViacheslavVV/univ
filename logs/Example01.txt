@@ -1,6 +1,0 @@
-23.02.2016 00:08:24 [main] INFO  by.bsu.chat.main.Main  - info
-23.02.2016 00:13:46 [main] INFO  by.bsu.chat.main.Main  - info
-23.02.2016 00:22:03 [main] INFO  by.bsu.chat.main.Main  - info
-23.02.2016 00:27:20 [main] INFO  by.bsu.chat.main.Main  - info
-23.02.2016 11:43:13 [main] INFO  by.bsu.chat.main.Main  - info
-23.02.2016 12:40:02 [main] INFO  by.bsu.chat.main.Main  - info
