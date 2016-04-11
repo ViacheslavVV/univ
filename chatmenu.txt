@@ -3,4 +3,3 @@ Choose you destiny
 2 exit
 3 view history
 4 remove by id
-5 save to file

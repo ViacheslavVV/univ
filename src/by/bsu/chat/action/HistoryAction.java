@@ -21,23 +21,7 @@ public class HistoryAction {
     }
 
     public boolean removeById(int id, Collection<Message> messages) {
-        Collection<Message> newMessages = new ArrayDeque<>();
-        for (Message message : messages) {
-            if (message.getId() != id) {
-                newMessages.add(message);
-            }
-        }
-
-        return true;
-        /*Iterator<Message> iterator = messages.iterator();
-        Message message;
-        while (iterator.hasNext()) {
-            message = iterator.next();
-            if (message.getId() == id) {
-                return messages.remove(message);
-            }
-        }
-        return f;*/
+        return messages.removeIf(m -> m.getId() == id);
     }
 
     public Collection<Message> authorSearch(String author, Collection<Message> messages) {
