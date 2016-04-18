@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Random;
 
 /**
- * an entity class message
+ * an entity class text
  */
 public class Message {
     private static Random random;
@@ -12,15 +12,18 @@ public class Message {
         random = new Random();
     }
     private int id;
-    private String message;
+    private String text;
     private String author;
     private long timestamp;
 
-    public Message(String message,
+    public Message() {
+    }
+
+    public Message(String text,
                    String author,
                    long timestamp){
         this.id = random.nextInt();
-        this.message = message;
+        this.text = text;
         this.author = author;
         this.timestamp = timestamp;
     }
@@ -33,8 +36,8 @@ public class Message {
         return author;
     }
 
-    public String getMessage() {
-        return message;
+    public String getText() {
+        return text;
     }
 
     public long getTimestamp() {
@@ -49,8 +52,8 @@ public class Message {
         this.id = id;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public static void setRandom(Random random) {
@@ -67,8 +70,9 @@ public class Message {
 
     @Override
     public String toString(){
-        return new StringBuilder().append("id = ").append(id).append("\n")
-                .append("message = ").append(message).append("\n")
+        return new StringBuilder()
+                .append("id = ").append(id).append("\n")
+                .append("text = ").append(text).append("\n")
                 .append("author = ").append(author).append("\n")
                 .append("date = ").append(new Date(timestamp)).toString();
     }

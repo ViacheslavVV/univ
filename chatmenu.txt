@@ -1,5 +1,0 @@
-Choose you destiny
-1 write message
-2 exit
-3 view history
-4 remove by id

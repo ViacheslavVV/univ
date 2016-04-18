@@ -10,22 +10,29 @@ import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.ArrayDeque;
 import java.util.Collection;
+import java.util.Collections;
 
 public class Loader {
-    public Collection<Message> loadHistory(String filename) throws IOException {
-        Reader reader = new FileReader(filename);
-        Gson gson = new GsonBuilder().create();
+    public Collection<Message> loadHistory(String filename) {
+        try (Reader reader = new FileReader(filename)) {
 
-        Type collectionType = new TypeToken<ArrayDeque<Message>>() {
-        }.getType();
+            Gson gson = new GsonBuilder().create();
 
-        Collection<Message> messages = gson.fromJson(reader, collectionType);
+            Type collectionType = new TypeToken<ArrayDeque<Message>>() {
+            }.getType();
 
-        if (messages == null) {
-            messages = new ArrayDeque<>();
+            Collection<Message> messages = gson.fromJson(reader, collectionType);
+
+            if (messages == null) {
+                messages = new ArrayDeque<>();
+            }
+            return messages;
+
+        } catch (IOException e) {
+            System.err.println("file " + filename + "didn't find");
+            e.printStackTrace();
+            System.exit(1);
         }
-
-        reader.close();
-        return messages;
+        return Collections.emptyList();
     }
 }

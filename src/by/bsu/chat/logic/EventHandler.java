@@ -1,71 +1,55 @@
 package by.bsu.chat.logic;
 
 import by.bsu.chat.action.HistoryAction;
-import by.bsu.chat.entity.ChatMenu;
+import by.bsu.chat.constants.Constants;
 import by.bsu.chat.entity.Login;
 import by.bsu.chat.entity.Message;
-import by.bsu.chat.report.Report;
-import java.io.IOException;
-import java.util.ArrayDeque;
+
 import java.util.Collection;
-import java.util.Date;
 import java.util.Scanner;
 
 /**
  * this class defines actions with message
  */
 public class EventHandler {
-    public void startChat(ChatMenu menu, Login login, Collection<Message> messages) throws IOException {
+    public void startChat(Login login, Collection<Message> messages) {
         try (Scanner scanner = new Scanner(System.in)) {
             int i = 0;
-            HistoryAction action = new HistoryAction();
-            Message message;
+            HistoryAction historyAction = new HistoryAction();
+            UserAction userAction = new UserAction();
             do {
-                System.out.println(menu);
+                System.out.println(Constants.menuString());
+
                 try {
                     i = Integer.parseInt(scanner.nextLine());
                 } catch (NumberFormatException e) {
-                    System.out.println("You entered not a number" +
-                            "\nPress enter to continue");
-                    scanner.nextLine();
+                    System.out.println(Constants.numberFormatString());
                     continue;
                 }
                 switch (i) {
                     case 1:
-                        System.out.println("Enter your message");
-                        message = new Message(
-                                scanner.nextLine(),
-                                login.toString(),
-                                new Date().getTime()
-                        );
-                        messages.add(message);
+                        userAction.createAndAddMessage(login, messages, scanner);
                         break;
                     case 2:
-                        Report report = new Report();
-                        report.messagesToJson("output.json", messages);
+                        userAction.exitAndSave(messages, Constants.outFileString());
                         break;
                     case 3:
-                        action.printMessages(messages);
+                        userAction.printMessageHistory(messages, historyAction);
                         break;
                     case 4:
-                        System.out.println("Enter id of removing message");
-                        int id;
-                        try {
-                            id = Integer.parseInt(scanner.nextLine());
-                            if (action.removeById(id, messages)) {
-                                System.out.println("deleted success");
-                            } else {
-                                System.out.println("message with id = " + id  + " does not exist");
-                            }
-                        } catch (NumberFormatException e) {
-                            System.out.println("You entered not a number" +
-                                    "\nPress enter to continue");
-                            scanner.nextLine();
-                            continue;
-                        }
+                        userAction.idDelete(messages, scanner, historyAction);
+                        break;
+                    case 5:
+                        userAction.authorSearchAndPrintResult(messages, historyAction, scanner);
+                        break;
+                    case 6:
+                        userAction.regexSearchAndPrintResult(messages, historyAction, scanner);
+                        break;
+                    case 7:
+                        userAction.lexemeSearchAndPrintResult(messages, historyAction, scanner);
                         break;
                     default:
-                        System.out.println("illegal case");
+                        System.out.println(Constants.illegalCaseString());
                 }
             } while (i != 2);
         }
