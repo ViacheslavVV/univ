@@ -62,4 +62,17 @@ class UserAction {
         String lexeme = scanner.nextLine();
         action.printMessages(action.lexemeSearch(lexeme, messages));
     }
+
+    void periodSearchAndPrint(Collection<Message> messages, HistoryAction action, Scanner scanner) {
+        try {
+            System.out.println("enter from timestamp");
+            long t1 = Long.parseLong(scanner.nextLine());
+            System.out.println("enter by timestamp");
+            long t2 = Long.parseLong(scanner.nextLine());
+            action.printMessages(action.periodSearch(messages, t1, t2));
+
+        } catch (NumberFormatException e) {
+            System.out.println(Constants.numberFormatString());
+        }
+    }
 }

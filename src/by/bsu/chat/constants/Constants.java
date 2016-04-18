@@ -9,7 +9,8 @@ public final class Constants {
                 "4 remove by id\n" +
                 "5 author search\n" +
                 "6 regex search\n" +
-                "7 lexeme search";
+                "7 lexeme search\n" +
+                "8 period search";
     }
 
     public static String numberFormatString() {

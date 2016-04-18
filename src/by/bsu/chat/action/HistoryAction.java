@@ -53,4 +53,16 @@ public class HistoryAction {
     public Collection<Message> lexemeSearch(String lexeme, Collection<Message> messages) {
         return regexSearch(lexeme, messages);
     }
+
+    public Collection<Message> periodSearch(Collection<Message> messages,long t1, long t2) {
+        Collection<Message> deque = new ArrayDeque<>();
+        long timestamp;
+        for (Message message : messages) {
+            timestamp = message.getTimestamp();
+            if (timestamp >= t1 && timestamp <= t2) {
+                deque.add(message);
+            }
+        }
+        return deque;
+    }
 }

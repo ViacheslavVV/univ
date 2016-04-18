@@ -19,7 +19,6 @@ public class EventHandler {
             UserAction userAction = new UserAction();
             do {
                 System.out.println(Constants.menuString());
-
                 try {
                     i = Integer.parseInt(scanner.nextLine());
                 } catch (NumberFormatException e) {
@@ -47,6 +46,9 @@ public class EventHandler {
                         break;
                     case 7:
                         userAction.lexemeSearchAndPrintResult(messages, historyAction, scanner);
+                        break;
+                    case 8:
+                        userAction.periodSearchAndPrint(messages, historyAction, scanner);
                         break;
                     default:
                         System.out.println(Constants.illegalCaseString());
