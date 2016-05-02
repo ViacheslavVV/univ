@@ -1,6 +1,12 @@
 package by.bsu.chat.constants;
 
 public final class Constants {
+    public static final int MAX_LENGTH = 140;
+
+    public static String moreThan140() {
+        return "message length > 140";
+    }
+
     public static String menuString() {
         return "Choose you destiny\n" +
                 "1 write text\n" +
@@ -33,7 +39,15 @@ public final class Constants {
         return "Enter your message";
     }
 
-    public static String deleteSuccessString() {
-        return "deleted success";
+    public static String deleteIdSuccessString() {
+        return "success: message deleted by id";
+    }
+
+    public static String startApplication() {
+        return "start application";
+    }
+
+    public static String exitApplication() {
+        return "exit application";
     }
 }

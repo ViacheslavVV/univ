@@ -1,5 +1,6 @@
 package by.bsu.chat.main;
 
+import by.bsu.chat.constants.Constants;
 import by.bsu.chat.creator.Creator;
 import by.bsu.chat.entity.Login;
 import by.bsu.chat.entity.Message;
@@ -20,6 +21,7 @@ public class Main {
         new DOMConfigurator().doConfigure("log4j.xml", org.apache.log4j.LogManager.getLoggerRepository());
     }
     public static void main(String[] args){
+        LOG.info(Constants.startApplication());
 
         Creator creator = new Creator();
         Login login = creator.createLogin("login.txt");
@@ -28,6 +30,6 @@ public class Main {
         Collection<Message> collection = loader.loadHistory("output.json");
         eventHandler.startChat(login, collection);
 
-        //LOG.info("info");
+        LOG.info(Constants.exitApplication());
     }
 }

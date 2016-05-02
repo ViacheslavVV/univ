@@ -4,6 +4,7 @@ import by.bsu.chat.action.HistoryAction;
 import by.bsu.chat.constants.Constants;
 import by.bsu.chat.entity.Login;
 import by.bsu.chat.entity.Message;
+import org.apache.log4j.Logger;
 
 import java.util.Collection;
 import java.util.Scanner;
@@ -12,6 +13,8 @@ import java.util.Scanner;
  * this class defines actions with message
  */
 public class EventHandler {
+    private static final Logger LOG = Logger.getLogger(EventHandler.class);
+
     public void startChat(Login login, Collection<Message> messages) {
         try (Scanner scanner = new Scanner(System.in)) {
             int i = 0;
@@ -23,6 +26,7 @@ public class EventHandler {
                     i = Integer.parseInt(scanner.nextLine());
                 } catch (NumberFormatException e) {
                     System.out.println(Constants.numberFormatString());
+                    LOG.info(Constants.numberFormatString(), e);
                     continue;
                 }
                 switch (i) {
