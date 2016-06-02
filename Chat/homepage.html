@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Chat</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="style.css"></link>
+        <script src = "script.js"></script>
+        <link type="text/css" rel="stylesheet" href="bootstrap.min.css"></link>
+    </head>
+    <body onload ="run()">
+            <center id="welcome">Welcome</center>
+
+            <center><div class="form-inline">
+                <div class="form-group">
+                    <input id="ulogin" class = "form-control" type="text" placeholder = "Login" ></input>
+                    <button id="loginBtn" class = "btn" onclick = login()>Login</button>
+                    <button id="renamebtn" class = "btn" onclick = rename()>Rename</button>
+                    <button id="logoutbtn" class = "btn" onclick = logout()>Logout</button>
+                </div>
+            </div></center>
+            
+        <div id = "chatbox">
+            <table id = "messageTable" class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <td><button id="markAll" class = "btn btn-xs"  onclick = markAll()>&#8595</button></td>
+                        <td>Name</td>   
+                        <td>Message</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
+                <tbody id = "tbody"></tbody>
+            </table>
+        </div>
+
+            <div id="message">
+                <textarea id="usermsg" placeholder = "Message"  class="form-control" rows="3"></textarea>
+                <button id="sendmsg" class = "btn" onclick = send()>Send</button>
+                <button id="deletebtn" class = "btn" onclick = deleteMessage()>Delete</button>
+                <button id="overwritebtn" class = "btn" onclick = overwriteMessage()>Overwrite</button>
+                <!--  <button class = "btn" onclick = voiceMessage()>Speaking</button> -->
+            </div>
+            <!--  <audio src = "" onloadeddata = playMusic() id = "audio"></audio> -->
+    </body>
+</html>
